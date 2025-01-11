@@ -1,7 +1,6 @@
+# News Search Application with React Native and Expo
 
-# Mobile Application with React Native and Expo
-
-This project is a mobile application built using React Native and Expo to meet the requirements for a list and detail view of articles. The app interacts with a Laravel backend API to fetch articles and manage favorites.
+This project is a mobile application built using React Native and Expo to meet the requirements for a news search application. The app interacts with the News API to fetch and display news articles based on user input.
 
 ## **Setup and Run Instructions**
 
@@ -23,55 +22,63 @@ This project is a mobile application built using React Native and Expo to meet t
    ```
 
 4. Run the app on your desired platform:
-   - Scan the QR code from your terminal or Expo Dev Tools to open the app on your phone using the Expo Go app.
-   - For simulators/emulators, press `i` for iOS or `a` for Android in the terminal.
+    - Scan the QR code from your terminal or Expo Dev Tools to open the app on your phone using the Expo Go app.
+    - For simulators/emulators, press `i` for iOS or `a` for Android in the terminal.
 
 ## **External Libraries Used**
 
-1. **React Navigation**: For seamless navigation between screens (articles list and detail screens).
-   - Justification: React Navigation is a well-documented and widely-used library for handling navigation in React Native apps. It simplifies navigation logic while providing a great developer experience.
+1. **React Navigation**: For seamless navigation between screens.
+    - Justification: React Navigation is a well-documented and widely-used library for handling navigation in React Native apps. It simplifies navigation logic while providing a great developer experience.
 
 2. **Expo Router**: For file-based routing.
-   - Justification: Expo Router integrates seamlessly with Expo projects, enabling declarative and predictable routing.
+    - Justification: Expo Router integrates seamlessly with Expo projects, enabling declarative and predictable routing.
 
-3. **Axios**: For API requests to the Laravel backend.
-   - Justification: Axios provides a promise-based HTTP client with a clean and concise syntax, simplifying API calls.
+3. **Fetch API**: For API requests to the News API.
+    - Justification: The Fetch API is built into JavaScript and provides a simple way to make HTTP requests without the need for additional dependencies.
 
 ## **Time Management**
 
 - **Shortcuts Taken**:
-   - Focused on achieving core functionality and UI instead of adding advanced features like persistent storage for favorites or animations.
-   - Used placeholder styling for simplicity without exploring advanced design techniques (e.g., skeleton loaders for the articles list).
+    - Focused on achieving core functionality and UI instead of adding advanced features like persistent search history or animations.
+    - Used basic styling for simplicity without exploring advanced design techniques (e.g., skeleton loaders for the articles list).
 
 - **With More Time**:
-   - Implemented persistent storage (e.g., AsyncStorage or SQLite) to save favorite articles locally.
-   - Added unit and integration tests for the components and API interactions.
-   - Improved the UI/UX with animations, skeleton loaders, and dark mode.
+    - Implemented persistent storage (e.g., AsyncStorage) to save search history locally.
+    - Added unit and integration tests for the components and API interactions.
+    - Improved the UI/UX with animations, skeleton loaders, and dark mode.
 
 ## **Assumptions**
 
-1. Articles fetched from the API contain complete information, including `title`, `text`, `image_url`, `author`, and `categories`.
-2. Categories are predefined as `All Articles`, `Fitness`, and `Glucose Management`.
-3. API response adheres to the structure tested during development.
-
+1. Articles fetched from the API contain complete information, including `title`, `description`, and other relevant metadata.
+2. The user provides a valid search query to fetch relevant articles.
+3. The API response adheres to the structure tested during development.
 
 ## **Design Decisions**
 
 1. **File Structure**: Used Expo Router for file-based routing, which aligns well with modular design practices.
-2. **Custom Header**: Built a custom header for the detail screen to match the design requirements.
-3. **Favorite Toggle**: Implemented a state-based favorite toggle for simplicity.
+2. **Error Handling**: Added error handling for invalid input, network failures, and cases with no results.
+3. **Loading State**: Included an activity indicator to enhance user experience during API calls.
+
+## **Implemented Features**
+
+1. Real-time search functionality to fetch articles based on user input.
+2. Graceful error handling for edge cases (e.g., empty search term, API errors, no results).
+3. Clean and minimalistic UI for ease of use and readability.
 
 ## **Unimplemented Features**
 
-1. Persistent storage for favorite articles was not implemented due to time constraints.
+1. Persistent storage for search history was not implemented due to time constraints.
 2. Unit tests for components and API interactions were not included.
 3. Responsive design improvements for tablets and larger screens.
 
 ## **How to Test**
 
-1. Open the articles list screen and verify the list of articles fetched from the API.
-2. Click on an article to navigate to the detail screen.
-3. Test the "Add to favorites" functionality and ensure the state toggles correctly.
+1. Open the app and enter a search term in the input field.
+2. Press the "Search" button to fetch news articles.
+3. Verify that the articles are displayed in a list with titles and descriptions.
+4. Test edge cases, such as:
+    - Leaving the search field empty and pressing "Search."
+    - Searching for terms with no results.
 
 ## **Screenshots**
 
@@ -80,4 +87,12 @@ This project is a mobile application built using React Native and Expo to meet t
 
 ## **Expo Documentation**
 
-Since this project was my first time using Expo, I referred to the [Expo Documentation](https://docs.expo.dev/) to understand the framework, routing, and configuration.
+This project extensively uses Expo for development. Refer to the [Expo Documentation](https://docs.expo.dev/) for details on configuration, routing, and deployment.
+
+## **Future Improvements**
+
+1. Add persistent storage using AsyncStorage to save search history locally.
+2. Enhance the UI with animations and skeleton loaders.
+3. Add pagination for large lists of articles.
+4. Implement unit tests to ensure code reliability and robustness.
+5. Provide support for dark mode to improve accessibility.
