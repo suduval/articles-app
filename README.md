@@ -75,14 +75,8 @@ This project is a mobile application built using React Native and Expo to meet t
 
 ## **Screenshots**
 
-### Articles List Screen
-![Articles List](ArticleList.png)
-
-### Article Detail Screen
-![Article Detail](ArticleDetail.png)
-
-### Favorites Toggle
-![Favorites Toggle](favorite.png)
+### News Search Results
+![NewsSearch](NewsSearch.png)
 
 ## **Expo Documentation**
 
